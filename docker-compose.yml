@@ -1,0 +1,14 @@
+services:
+  library-backend:
+    build:
+      context: ./library-backend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+
+  library-frontend:
+    build:
+      context: ./library-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"

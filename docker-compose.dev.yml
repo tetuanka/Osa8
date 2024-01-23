@@ -1,0 +1,21 @@
+services:
+
+  library-frontend:
+    build:
+      context: ./library-frontend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./library-frontend:/usr/src/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - library-backend
+
+  library-backend:
+    build:
+      context: ./library-backend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./library-backend:/usr/src/app
+    ports:
+      - "3001:3001"
